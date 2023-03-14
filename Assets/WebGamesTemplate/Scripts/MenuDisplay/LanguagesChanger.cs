@@ -1,11 +1,11 @@
 using UnityEngine;
 using Agava.YandexGames;
-//using Lean.Localization;
+using Lean.Localization;
 using System.Collections;
 
 public class LanguagesChanger : MonoBehaviour
 {
-  //  [SerializeField] private LeanLocalization _leanLocalization;
+    [SerializeField] private LeanLocalization _leanLocalization;
 
 #if YANDEX_GAMES
     private IEnumerator Start()

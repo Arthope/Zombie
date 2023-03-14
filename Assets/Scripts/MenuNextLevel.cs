@@ -6,13 +6,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Agava.YandexGames;
+using Agava.YandexGames.Samples;
 
 
 public class MenuNextLevel : MonoBehaviour
 {
-    [DllImport("__Internal")]
-
-    private static extern void ShowAdv();
 
     [SerializeField] private GameObject test;
     [SerializeField] TextMeshProUGUI _levelText;
@@ -36,6 +35,7 @@ public class MenuNextLevel : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         PlayerPrefs.SetInt("_currentLevel", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("_saveNumberOfCoin", _coinManager.NumberOfCoins += 10);
+        Leaderboard.SetScore("Coins", _coinManager.NumberOfCoins += 10);
         PlayerPrefs.Save();
         Progress.Instance.Save();
     }
@@ -48,12 +48,13 @@ public class MenuNextLevel : MonoBehaviour
             SceneManager.LoadScene(next);
             PlayerPrefs.SetInt("_currentLevel", next);
             PlayerPrefs.SetInt("_saveNumberOfCoin", _coinManager.NumberOfCoins += 100);
+            Leaderboard.SetScore("Coins", _coinManager.NumberOfCoins += 100);
             PlayerPrefs.Save();
             Progress.Instance.PlayerInfo.Level = SceneManager.GetActiveScene().buildIndex;
             Progress.Instance.Save();
             if (next == 5 || next == 10 || next == 15|| next == 20)
             {
-                ShowAdv();
+                Agava.YandexGames.VideoAd.Show();
             }
     }
 

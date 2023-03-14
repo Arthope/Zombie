@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 using TMPro;
+using Agava.YandexGames;
+using Lean.Localization;
 
 public class Language : MonoBehaviour
 {
-    [DllImport("__Internal")]
-
-    private static extern string GetLang();
-
+    
     public static Language Instance;
     public string CurrentLanguage;
     [SerializeField] TextMeshProUGUI _languageText;
@@ -20,8 +19,9 @@ public class Language : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            CurrentLanguage = GetLang();
             _languageText.text = CurrentLanguage;
+
+            CurrentLanguage = YandexGamesSdk.Environment.i18n.lang;
         }
         else
         {

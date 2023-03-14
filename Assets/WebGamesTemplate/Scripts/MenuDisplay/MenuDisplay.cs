@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class MenuDisplay : MonoBehaviour
 {
     [SerializeField] private LeaderBoardButton _leaderBoardButton;
-    [SerializeField] private InviteFriendsButton _inviteFriendsButton;
 
     private void Start()
     {

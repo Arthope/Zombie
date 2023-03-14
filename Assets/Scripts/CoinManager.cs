@@ -12,14 +12,6 @@ public class CoinManager : MonoBehaviour
     [SerializeField] GameObject _batton;
     int _saveNumberOfCoin;
 
-    [DllImport("__Internal")]
-
-    private static extern void AddCoinsExtern(int value);
-
-    [DllImport("__Internal")]
-
-    private static extern void SetToLeaderboard(int value);
-
     private void Start()
     {
         if (PlayerPrefs.HasKey("_saveNumberOfCoin"))
@@ -28,7 +20,6 @@ public class CoinManager : MonoBehaviour
             NumberOfCoins = PlayerPrefs.GetInt("_saveNumberOfCoin");
         }
         _text.text = NumberOfCoins.ToString();
-        SetToLeaderboard(NumberOfCoins);
         transform.parent = null;
 
     }
@@ -46,7 +37,7 @@ public class CoinManager : MonoBehaviour
 
     public void ShowAdvButton()
     {
-        AddCoinsExtern(50);
+        Agava.YandexGames.InterstitialAd.Show();
         _batton.SetActive(false);
     }
 

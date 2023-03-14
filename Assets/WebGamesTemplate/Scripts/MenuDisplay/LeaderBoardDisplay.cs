@@ -10,9 +10,9 @@ public class LeaderBoardDisplay : MonoBehaviour
     [SerializeField] private TMP_Text[] _ranks;
     [SerializeField] private TMP_Text[] _leaderNames;
     [SerializeField] private TMP_Text[] _scoreList;
-    [SerializeField] private string _leaderboardName = "LeaderBoard";
+    [SerializeField] private string _leaderboardName = "Coins";
 
-    private int _playerScore = 69;
+    private int _playerScore = 0;
 
     public void OpenYandexLeaderboard()
     {

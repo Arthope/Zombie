@@ -52,6 +52,7 @@ public class Shop : MonoBehaviour
             _coinManager.NumberOfCoins -= 120;
             Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
             PlayerPrefs.SetInt("numberGirl", 1);
+            PlayerPrefs.SetInt("Characters", 1);
                 Destroy(_buttonChartersGirl);
             PlayerPrefs.Save();
         }
@@ -64,11 +65,11 @@ public class Shop : MonoBehaviour
                 _coinManager.NumberOfCoins -= 240;
                 Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
             PlayerPrefs.SetInt("numberBoy", 2);
-
+            PlayerPrefs.SetInt("Characters", 2);
             Destroy(_buttonChartersBoy);
             PlayerPrefs.Save();
 
-        }
+             }
         }
 
         public void BuePolice()
@@ -78,10 +79,10 @@ public class Shop : MonoBehaviour
                 _coinManager.NumberOfCoins -= 350;
                 Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
             PlayerPrefs.SetInt("numberPolice", 3);
-
+            PlayerPrefs.SetInt("Characters", 3);
             Destroy(_buttonChartersPolice);
             PlayerPrefs.Save();
-        }
+            }
         }
 
         public void BueSolder()
@@ -90,8 +91,9 @@ public class Shop : MonoBehaviour
             {
                 _coinManager.NumberOfCoins -= 500;
                 Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
-               
-                    Destroy(_buttonChartersSolder);
+            PlayerPrefs.SetInt("numberSolder", 4);
+            PlayerPrefs.SetInt("Characters", 4);
+            Destroy(_buttonChartersSolder);
             PlayerPrefs.Save();
 
         }
@@ -104,9 +106,9 @@ public class Shop : MonoBehaviour
             PlayerPrefs.Save();
             _coinManager.NumberOfCoins -= 700;
                 Progress.Instance.PlayerInfo.Coins = _coinManager.NumberOfCoins;
-             
-         
-                    Destroy(_buttonChartersHero);
+            PlayerPrefs.SetInt("numberHero", 5);
+            PlayerPrefs.SetInt("Characters", 5);
+            Destroy(_buttonChartersHero);
             }
         }
     
